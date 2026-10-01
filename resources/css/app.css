@@ -5,6 +5,8 @@
 @source '../views';
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 
+@source "../../content";
+
 @custom-variant dark (&:is(.dark *));
 
 @theme {
@@ -12,6 +14,11 @@
         'Instrument Sans', ui-sans-serif, system-ui, sans-serif,
         'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
         'Noto Color Emoji';
+
+    --text-xl-text: var(--xl-text);
+    --text-l-text: var(--l-text);
+    --text-base-text: var(--base-text);
+    --text-caption-text: var(--caption-text);
 
     --radius-lg: var(--radius);
     --radius-md: calc(var(--radius) - 2px);
@@ -95,6 +102,11 @@
     --sidebar-accent-foreground: oklch(0.205 0 0);
     --sidebar-border: oklch(0.922 0 0);
     --sidebar-ring: oklch(0.87 0 0);
+
+    --xl-text: 96px;
+    --l-text: 48px;
+    --base-text: 16px;
+    --caption-text: 14px;
 }
 
 .dark {
@@ -139,5 +151,9 @@
 
     body {
         @apply bg-background text-foreground;
+
+        .container-fluid {
+            @apply px-4 lg:px-16;
+        }
     }
 }

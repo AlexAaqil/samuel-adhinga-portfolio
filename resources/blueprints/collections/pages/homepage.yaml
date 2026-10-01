@@ -1,0 +1,62 @@
+title: HomePage
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: hero_image
+            field:
+              container: images
+              max_files: 1
+              min_files: 1
+              type: assets
+              display: HeroImage
+          -
+            handle: catch_phrase
+            field:
+              type: textarea
+              display: 'Catch Phrase'
+          -
+            handle: recent_projects
+            field:
+              type: grid
+              display: 'Recent Projects'
+              fields:
+                -
+                  handle: project_image
+                  field:
+                    container: images
+                    max_files: 1
+                    min_files: 1
+                    type: assets
+                    display: project_image
+                -
+                  handle: project_name
+                  field:
+                    type: text
+                    display: project_name
+                -
+                  handle: project_year
+                  field:
+                    type: text
+                    display: project_year
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

@@ -5,9 +5,56 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{{ (title ?? site:name) | sanitize }}</title>
-        {{ vite src="resources/js/site.js|resources/css/site.css" }}
+        {{ vite src="resources/js/site.js|resources/css/app.css" }}
     </head>
     <body class="antialiased bg-zinc-100 font-sans leading-normal text-zinc-800 dark:bg-zinc-900 dark:text-zinc-400">
         {{ template_content }}
+    
+        <footer class="Footer pt-16 bg-accent-foreground text-accent">
+            <div class="container-fluid grid lg:grid-cols-4 gap-8">
+                <div class="info space-y-2">
+                    <p class="text-lg font-bold">{{ footer:artist_name }}</p>
+                    <p>{{ footer:address | nl2br }}</p>
+                    <p>{{ footer:email_address }}</p>
+                    <p>{{ footer:phone_number }}</p>
+                </div>
+
+                <div class="quick_links space-y-2 lg:justify-self-center">
+                    <p class="font-bold">Quick Links</p>
+                    <div class="flex flex-col items-start gap-2">
+                        {{ footer:quick_links }}
+                            <a href="{{ quick_link_url }}">{{ quick_link_text }}</a>
+                        {{ /footer:quick_links }}
+                    </div>
+                </div>
+
+                <div class="services space-y-2 lg:justify-self-center">
+                    <p class="font-bold">Services</p>
+                    <div class="flex flex-col items-start gap-2">
+                        {{ footer:service_links }}
+                            <a href="{{ service_link_url }}">{{ service_link_text }}</a>
+                        {{ /footer:service_links }}
+                    </div>
+                </div>
+
+                <div class="socials space-y-2 lg:justify-self-center">
+                    <p class="font-bold">Socials</p>
+                    <div class="flex gap-6">
+                        {{ footer:social_links }}
+                            <a href="{{ social_url }}" class="[&_svg]:w-6 [&_svg]:h-6 [&_svg]:fill-accent">
+                                {{ social_logo | output }}
+                            </a>
+                        {{ /footer:social_links }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid mt-4">
+                <p class="border-t border-gray-500 grid lg:grid-cols-4 gap-4 lg:justify-between py-4">
+                    <span class="lg:col-span-3">{{ footer:copyright_text }}</span>
+                    <span class="lg:col-span-1 lg:justify-self-end">Made by: <a href="https://alsuwa.com">alsuwa.com</a></span>
+                </p>
+            </div>
+        </footer>
     </body>
 </html>

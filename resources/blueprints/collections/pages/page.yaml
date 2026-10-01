@@ -1,0 +1,27 @@
+tabs:
+  main:
+    sections:
+      -
+        display: Content
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+          -
+            handle: content
+            field:
+              type: markdown
+              localizable: true
+  sidebar:
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+title: Page
