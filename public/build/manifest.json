@@ -402,5 +402,11 @@
       "_wayfinder-Cz1tZntl.js",
       "resources/js/app.tsx"
     ]
+  },
+  "resources/js/site.js": {
+    "file": "assets/site-BvRk9kiK.js",
+    "name": "site",
+    "src": "resources/js/site.js",
+    "isEntry": true
   }
 }
