@@ -1,0 +1,54 @@
+title: PortfolioPage
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: portfolio_page_title
+            field:
+              type: text
+              display: 'Portfolio Page Title'
+          -
+            handle: portfolio
+            field:
+              type: grid
+              display: Portfolio
+              fields:
+                -
+                  handle: image
+                  field:
+                    container: images
+                    max_files: 1
+                    min_files: 1
+                    type: assets
+                    display: Image
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: Title
+                -
+                  handle: project_year
+                  field:
+                    type: text
+                    display: 'Project Year'
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

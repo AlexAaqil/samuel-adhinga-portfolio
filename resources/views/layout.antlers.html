@@ -8,6 +8,23 @@
         {{ vite src="resources/js/site.js|resources/css/app.css" }}
     </head>
     <body class="antialiased bg-zinc-100 font-sans leading-normal text-zinc-800 dark:bg-zinc-900 dark:text-zinc-400">
+        <header class="py-4">
+            <nav class="flex items-center">
+                <div class="container-fluid flex-1 flex justify-between gap-4">
+                    <div class="logo">
+                        <a href="/" class="font-bold">Samuel Adhing'a</a>
+                    </div>
+
+                    <div class="nav-links hidden lg:flex gap-8">
+                        <a href="/about" class="font-medium">About</a>
+                        <a href="/portfolio" class="font-medium">Portfolio</a>
+                        <a href="/services" class="font-medium">Services</a>
+                        <a href="/contact" class="font-medium">Contact</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
         {{ template_content }}
     
         <footer class="Footer pt-16 bg-accent-foreground text-accent">

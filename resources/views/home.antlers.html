@@ -6,55 +6,35 @@
     }
 </style>
 
-<div class="">
+<div class="HomePage">
+    <section class="Hero">
+        <div class="hero_image h-[50dvh] lg:h-[90dvh]">
+            <img src="{{ hero_image:url }}" alt="" class="w-full h-full object-cover">
+        </div>
+    </section>
 
-    <header class="py-4">
-        <nav class="flex items-center">
-            <div class="container-fluid flex-1 flex justify-between gap-4">
-                <div class="logo">
-                    <a href="/" class="font-bold">Samuel Adhing'a</a>
-                </div>
+    <section class="CatchPhrase h-[40dvh] lg:h-dvh flex items-center justify-center py-8">
+        <div class="container-fluid">
+            <p class="font-bold lg:text-l-text uppercase text-center">{{ catch_phrase | nl2br }}</p>
+        </div>
+    </section>
 
-                <div class="nav-links hidden lg:flex gap-8">
-                    <a href="/" class="font-medium">About</a>
-                    <a href="/" class="font-medium">Portfolio</a>
-                    <a href="/" class="font-medium">Services</a>
-                    <a href="/" class="font-medium">Contact</a>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <main class="">
-        <section class="Hero">
-            <div class="hero_image h-[50dvh] lg:h-[90dvh]">
-                <img src="{{ hero_image:url }}" alt="" class="w-full h-full object-cover">
-            </div>
-        </section>
-
-        <section class="CatchPhrase h-[40dvh] lg:h-dvh flex items-center justify-center py-8">
-            <div class="container-fluid">
-                <p class="font-bold lg:text-l-text uppercase text-center">{{ catch_phrase | nl2br }}</p>
-            </div>
-        </section>
-
-        <section class="RecentProjects py-8">
-            <div class="container-fluid">
-                <div class="projects-wrapper grid lg:grid-cols-2 gap-8">
-                    {{ recent_projects }}
-                        <div class="project">
-                            <div class="image h-[40dvh] lg:h-[60dvh]">
-                                <img src="{{ project_image:url }}" alt="{{ project_image:alt ?? 'Project Image' }}" class="w-full h-full object-cover">
-                            </div>
-
-                            <div class="content py-4 px-2 space-y-2">
-                                <p class="font-bold">{{ project_name }}</p>
-                                <p class="text-caption-text">{{ project_year }}</p>
-                            </div>
+    <section class="RecentProjects py-8">
+        <div class="container-fluid">
+            <div class="projects-wrapper grid lg:grid-cols-2 gap-8">
+                {{ recent_projects }}
+                    <div class="project">
+                        <div class="image h-[40dvh] lg:h-[60dvh]">
+                            <img src="{{ project_image:url }}" alt="{{ project_image:alt ?? 'Project Image' }}" class="w-full h-full object-cover">
                         </div>
-                    {{ /recent_projects }}
-                </div>
+
+                        <div class="content py-4 px-2 space-y-2">
+                            <p class="font-bold">{{ project_name }}</p>
+                            <p class="text-caption-text">{{ project_year }}</p>
+                        </div>
+                    </div>
+                {{ /recent_projects }}
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 </div>

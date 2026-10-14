@@ -1,0 +1,51 @@
+title: AboutPage
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: image
+            field:
+              container: images
+              max_files: 1
+              min_files: 1
+              type: assets
+              display: Image
+          -
+            handle: about_page_title
+            field:
+              type: text
+              display: 'About Page Title'
+          -
+            handle: about_content
+            field:
+              buttons:
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - link
+              type: markdown
+              display: 'About Content'
+              smartypants: true
+              antlers: true
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

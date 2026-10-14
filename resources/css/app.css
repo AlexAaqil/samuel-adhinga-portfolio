@@ -17,6 +17,7 @@
 
     --text-xl-text: var(--xl-text);
     --text-l-text: var(--l-text);
+    --text-heading-text: var(--heading-text);
     --text-base-text: var(--base-text);
     --text-caption-text: var(--caption-text);
 
@@ -105,6 +106,7 @@
 
     --xl-text: 96px;
     --l-text: 48px;
+    --heading-text: 24px;
     --base-text: 16px;
     --caption-text: 14px;
 }

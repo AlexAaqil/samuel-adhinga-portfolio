@@ -1,0 +1,54 @@
+title: ServicePage
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: services_page_title
+            field:
+              type: text
+              display: 'Services Page Title'
+          -
+            handle: services
+            field:
+              type: grid
+              display: Services
+              fields:
+                -
+                  handle: image
+                  field:
+                    container: images
+                    max_files: 1
+                    min_files: 1
+                    type: assets
+                    display: Image
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: Title
+                -
+                  handle: short_description
+                  field:
+                    type: text
+                    display: 'Short Description'
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
