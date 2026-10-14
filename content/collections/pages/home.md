@@ -4,7 +4,7 @@ blueprint: homepage
 title: Home
 template: home
 updated_by: 1
-updated_at: 1790869038
+updated_at: 1791965894
 hero_image: statamic_images/6a1ceb2eb187ffdba160c5ed_stanley-7.avif
 catch_phrase: |-
   I design bespoke solutions 
