@@ -53,7 +53,21 @@ return [
     */
 
     'widgets' => [
-        //
+        [
+            'type' => 'collection',
+            'collection' => 'pages',
+            'limit' => 10,
+            'sort' => 'title:asc',
+            'width' => 'card'
+        ], 
+        [
+            'type' => 'form',
+            'form' => 'contact_us',
+            'fields' => ['full_name', 'email', 'message'],
+            'limit' => 10,
+            'width' => 100,
+            'title' => 'Contact Us Form Submissions'
+        ]
     ],
 
     /*

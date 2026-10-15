@@ -1,0 +1,35 @@
+title: ContactPage
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: contact_page_heading
+            field:
+              type: textarea
+              display: 'Contact Page Heading'
+          -
+            handle: contact_page_description
+            field:
+              type: textarea
+              display: 'Contact Page Description'
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
