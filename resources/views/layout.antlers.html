@@ -8,21 +8,49 @@
         {{ vite src="resources/js/site.js|resources/css/app.css" }}
     </head>
     <body class="antialiased bg-zinc-100 font-sans leading-normal text-zinc-800 dark:bg-zinc-900 dark:text-zinc-400">
-        <header class="py-4">
+        <header x-data="{ open: false }" class="sticky top-0 z-50 py-4 bg-zinc-100/80 backdrop-blur-md dark:bg-zinc-900/80">
             <nav class="flex items-center">
-                <div class="container-fluid flex-1 flex justify-between gap-4">
+                <div class="container-fluid flex-1 flex justify-between items-center gap-4">
                     <div class="logo">
                         <a href="/" class="font-bold">Samuel Adhing'a</a>
                     </div>
 
+                    <!-- Desktop nav -->
                     <div class="nav-links hidden lg:flex gap-8">
-                        <a href="/about" class="font-medium">About</a>
-                        <a href="/portfolio" class="font-medium">Portfolio</a>
-                        <a href="/services" class="font-medium">Services</a>
-                        <a href="/contact" class="font-medium">Contact</a>
+                        {{ nav:main_nav }}
+                            <a href="{{ url }}" class="font-medium {{ if is_current }}font-extrabold border-b-2 border-foreground{{ /if }}">{{ title }}</a>
+                        {{ /nav:main_nav }}
                     </div>
+
+                    <!-- Mobile hamburger button -->
+                    <button
+                        @click="open = !open"
+                        type="button"
+                        class="lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5"
+                        aria-label="Toggle menu"
+                        :aria-expanded="open.toString()"
+                    >
+                        <span class="block w-6 h-0.5 bg-current transition-transform duration-300" :class="open ? 'translate-y-2 rotate-45' : ''"></span>
+                        <span class="block w-6 h-0.5 bg-current transition-opacity duration-300" :class="open ? 'opacity-0' : ''"></span>
+                        <span class="block w-6 h-0.5 bg-current transition-transform duration-300" :class="open ? '-translate-y-2 -rotate-45' : ''"></span>
+                    </button>
                 </div>
             </nav>
+
+            <!-- Mobile menu -->
+            <div
+                x-show="open"
+                x-transition.opacity.duration.200ms
+                @click.outside="open = false"
+                class="lg:hidden absolute left-0 right-0 top-full bg-zinc-100/95 backdrop-blur-md dark:bg-zinc-900/95 border-t border-gray-200 dark:border-gray-700"
+                style="display: none;"
+            >
+                <div class="container-fluid py-4 flex flex-col gap-4">
+                    {{ nav:main_nav }}
+                        <a href="{{ url }}" class="font-medium py-2 {{ if is_current }}font-extrabold{{ /if }}">{{ title }}</a>
+                    {{ /nav:main_nav }}
+                </div>
+            </div>
         </header>
 
         {{ template_content }}
