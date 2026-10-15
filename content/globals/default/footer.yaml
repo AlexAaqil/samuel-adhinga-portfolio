@@ -1,0 +1,58 @@
+artist_name: "Samuel Adhing'a"
+address: |-
+  Kajiado, Kenya
+  Marriot Airport Conference Hall
+  Room S3
+email_address: samueladhinga@gmail.com
+phone_number: '+254 746 055 487'
+quick_links:
+  -
+    id: 2QITuCNwGk_XJSvbbCx9Z
+    quick_link: 'entry::049ed0c0-9796-43f7-b158-4f6129328c12'
+    quck_link_text: Home
+    quick_link_url: 'entry::049ed0c0-9796-43f7-b158-4f6129328c12'
+    quick_link_text: Home
+  -
+    id: QleSCFqz2Pa6qqOnp6C4E
+    quick_link_text: About
+    quick_link_url: 'entry::049ed0c0-9796-43f7-b158-4f6129328c12'
+  -
+    id: 7N7MvXRrI6JdJY9ue2qKm
+    quick_link_text: Services
+    quick_link_url: 'entry::049ed0c0-9796-43f7-b158-4f6129328c12'
+  -
+    id: X94xGRf4sdNu8ohcl9M7d
+    quick_link_text: Portfolio
+    quick_link_url: 'entry::049ed0c0-9796-43f7-b158-4f6129328c12'
+  -
+    id: nuFAnrSzzwMb2Fsy21WXW
+    quick_link_text: Contact
+    quick_link_url: 'entry::049ed0c0-9796-43f7-b158-4f6129328c12'
+service_links:
+  -
+    id: jvaWQIwFGpq7IhPKwwEn9
+    service_link: 'https://alsuwa.com'
+    service_link_text: Residential
+    service_link_url: 'entry::049ed0c0-9796-43f7-b158-4f6129328c12'
+  -
+    id: J2r-sr1ik9VqqzaMTDplt
+    service_link_text: Commercial
+    service_link_url: 'entry::049ed0c0-9796-43f7-b158-4f6129328c12'
+  -
+    id: N8VhkL2mk2HCnR8VYbYM7
+    service_link_text: Restoration
+    service_link_url: 'entry::049ed0c0-9796-43f7-b158-4f6129328c12'
+  -
+    id: nzaZGqjS6zzWn5OiZ4WG3
+    service_link_text: Consultation
+    service_link_url: 'entry::049ed0c0-9796-43f7-b158-4f6129328c12'
+social_links:
+  -
+    id: wHffs0AvGisqU-g8LVthJ
+    social_url: 'https://www.linkedin.com/in/samuel-adhing-a-7640291b1/'
+    social_logo: statamic_images/linkedin.svg
+  -
+    id: IyWOUGhuP8v7LR6MTJnQm
+    social_logo: statamic_images/whatsapp.svg
+    social_url: 'https://www.wa.me/@samuel_adhinga'
+copyright_text: "© 2026 Samuel Adhing'a. All rights reserved."
