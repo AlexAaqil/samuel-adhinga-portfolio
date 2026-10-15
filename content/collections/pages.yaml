@@ -1,6 +1,6 @@
 title: Pages
 taxonomies:
-  - projects
+  - project_types
 revisions: false
 route: '{parent_uri}/{slug}'
 structure:
