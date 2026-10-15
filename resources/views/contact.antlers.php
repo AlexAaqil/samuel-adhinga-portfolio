@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="contact-page-wrapper grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div class="content">
-                <h1 class="text-heading-text lg:text-l-text font-bold uppercase leading-13 mb-4">
+                <h1 class="text-l-text lg:text-xl-text font-bold uppercase leading-none mb-4">
                     {{ contact_page_heading | nl2br }}
                 </h1>
                 <p class="mb-8 max-w-md">
