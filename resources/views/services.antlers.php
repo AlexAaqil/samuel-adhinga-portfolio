@@ -1,6 +1,6 @@
 <div class="ServicesPage">
-    <section class="Hero mb-15">
-        <div class="container-fluid py-4 lg:py-16">
+    <section class="Hero mb-8">
+        <div class="container-fluid py-4">
             <h1 class="font-bold text-l-text uppercase lg:text-center">{{ services_page_title }}</h1>
         </div>
     </section>

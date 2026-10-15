@@ -1,25 +1,56 @@
-<div class="PortfolioPage">
-    <section class="Hero mb-15">
-        <div class="container-fluid py-4 lg:py-16">
-            <h1 class="font-bold text-heading-text uppercase lg:text-center">{{ portfolio_page_title }}</h1>
+<div class="PortfolioPage" x-data="{ activeType: new URLSearchParams(window.location.search).get('type') || '' }">
+    <section class="Hero mb-8">
+        <div class="container-fluid py-4">
+            <h1 class="font-bold text-l-text uppercase lg:text-center">{{ portfolio_page_title }}</h1>
         </div>
     </section>
 
     <section class="Portfolio mb-15">
         <div class="container-fluid">
-            <div class="portfolio-wrapper grid gap-8 lg:grid-cols-2">
-                {{ portfolio }}
-                    <div class="portfolio">
-                        <div class="image h-[40dvh] lg:h-[60dvh]">
-                            <img src={{ image }} alt={{ image:alt ?? title }} class="h-full w-full object-cover" />
-                        </div>
+            <div class="flex flex-wrap gap-2 mb-8">
+                <a 
+                    href="/portfolio" 
+                    x-target="portfolio-grid" 
+                    x-merge="morph"
+                    x-push-url
+                    @click="activeType = ''"
+                    :class="activeType === '' ? 'bg-foreground text-background' : ''"
+                    class="px-4 py-2 border border-gray-300"
+                >All</a>
+                
+                {{ taxonomy:project_types }}
+                    <a
+                        href="/portfolio?type={{ slug }}"
+                        x-target="portfolio-grid"
+                        x-merge="morph"
+                        x-push-url
+                        @click="activeType = '{{ slug }}'"
+                        :class="activeType === '{{ slug }}' ? 'bg-foreground text-background' : ''"
+                        class="px-4 py-2 border border-gray-300"
+                    >
+                        {{ title }}
+                    </a>
+                {{ /taxonomy:project_types }}
+            </div>
 
-                        <div class="content space-y-1 py-4 px-2">
-                            <p class="font-bold">{{ title }}</p>
-                            <p class="text-caption-text">{{ project_year }}</p>
+            <div class="portfolio-wrapper grid gap-8 lg:grid-cols-2" id="portfolio-grid">
+                {{ if {collection:portfolioprojects taxonomy:project_types="{get:type}"} }}
+                    {{ collection:portfolioprojects taxonomy:project_types="{get:type}" }}
+                        <div class="portfolio">
+                            <div class="image h-[40dvh] lg:h-[60dvh]">
+                                <img src={{ image }} alt={{ image:alt ?? title }} class="h-full w-full object-cover" />
+                            </div>
+                            <div class="content space-y-1 py-4 px-2">
+                                <p class="font-bold">{{ title }}</p>
+                                <p class="text-caption-text">{{ project_year }}</p>
+                            </div>
                         </div>
-                    </div>
-                {{ /portfolio }}
+                    {{ /collection:portfolioprojects }}
+                {{ else }}
+                    <p class="text-caption-text col-span-full py-8 text-center">
+                        No projects found{{ if get:type }} in this category{{ /if }} yet.
+                    </p>
+                {{ /if }}
             </div>
         </div>
     </section>

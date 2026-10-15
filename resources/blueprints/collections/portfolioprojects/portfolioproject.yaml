@@ -1,0 +1,47 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        display: Content
+        fields:
+          -
+            handle: image
+            field:
+              container: images
+              max_files: 1
+              min_files: 1
+              type: assets
+              display: Image
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: project_year
+            field:
+              type: text
+              display: 'Project Year'
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: project_types
+            field:
+              type: terms
+              taxonomies:
+                - project_types
+              display: 'Project Types'
+              mode: select
+title: PortfolioProject
