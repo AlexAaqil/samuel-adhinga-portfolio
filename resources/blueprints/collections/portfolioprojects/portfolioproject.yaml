@@ -25,6 +25,56 @@ tabs:
             field:
               type: text
               display: 'Project Year'
+          -
+            handle: content
+            field:
+              buttons:
+                - h2
+                - h3
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - removeformat
+                - quote
+                - anchor
+                - image
+                - underline
+                - superscript
+                - subscript
+              placeholder: 'Enter your content here'
+              reading_time: true
+              word_count: true
+              container: images
+              always_show_set_button: true
+              remove_empty_nodes: false
+              type: bard
+              display: Content
+              link_collections:
+                - pages
+              sets:
+                sets:
+                  display: Sets
+                  sets:
+                    content_image:
+                      display: 'Content Image'
+                      fields:
+                        -
+                          handle: content_image
+                          field:
+                            container: images
+                            max_files: 1
+                            min_files: 1
+                            type: assets
+                            display: 'Content Image'
+                    content_video:
+                      display: 'Content Video'
+                      fields:
+                        -
+                          handle: content_video
+                          field:
+                            type: video
+                            display: 'Content Video'
   sidebar:
     display: Sidebar
     sections:

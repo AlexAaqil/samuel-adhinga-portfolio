@@ -1,0 +1,36 @@
+<div class="PortfolioShowPage">
+    <section class="header mb-4">
+        <div class="container-fluid py-4">
+            <h1 class="font-bold text-heading-text lg:text-center">{{ title }}</h1>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="container-fluid">
+            {{ if content }}
+                {{ content }}
+                    {{ if type == "text" }}
+                        <div class="prose mb-4">{{ text }}</div>
+
+                    {{ elseif type == "content_image" }}
+                        <div class="image h-150 w-full border border-border bg-gray-50 mb-4 mt-4">
+                            <img src="{{ content_image:url }}" alt="{{ content_image:alt }}" class="w-full h-full object-contain">
+                        </div>
+
+                    {{ elseif type == "content_video" }}
+                        <div class="video h-150 w-full border border-border bg-gray-50 mb-4 mt-4">
+                            <iframe 
+                                src="{{ content_video | replace('watch?v=','embed/') }}" 
+                                frameborder="0" 
+                                allowfullscreen
+                                class="w-full h-full">
+                            </iframe>
+                        </div>
+                    {{ /if }}
+                {{ /content }}
+            {{ else }}
+                <p class="text-caption-text py-8 text-center">No content has been added yet.</p>
+            {{ /if }}
+        </div>
+    </section>
+</div>

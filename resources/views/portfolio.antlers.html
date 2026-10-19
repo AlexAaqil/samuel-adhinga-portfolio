@@ -41,7 +41,9 @@
                                 <img src={{ image }} alt={{ image:alt ?? title }} class="h-full w-full object-cover" />
                             </div>
                             <div class="content space-y-1 py-4 px-2">
-                                <p class="font-bold">{{ title }}</p>
+                                <a href="{{ url }}">
+                                    <p class="font-bold">{{ title }}</p>
+                                </a>
                                 <p class="text-caption-text">{{ project_year }}</p>
                             </div>
                         </div>

@@ -1,10 +1,11 @@
 title: PortfolioProjects
 icon: collections
-template: default
+template: portfolioprojects/show
 layout: layout
 taxonomies:
   - project_types
 revisions: false
+route: '/project/{slug}'
 sort_dir: asc
 date_behavior:
   past: null
