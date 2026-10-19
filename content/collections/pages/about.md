@@ -10,7 +10,7 @@ about_content: |-
 
   Characterized by warm, natural materials and an exacting eye for detail, Samuel’s work prioritizes authentic craftsmanship. For every commission, he curates a dedicated team of elite designers and technical professionals, ensuring that the initial design concept and final execution align seamlessly.
 
-  Since graduating in 2022 and sharpening his expertise across several prominent architectural firms, Samuel has operated on a foundational philosophy: "Architecture is not merely a matter of conception, but an act of structural execution." By masterfully bridging conceptual design knowledge with hands-on technical experience, he has built a practice where visionary design, raw craftsmanship, and precise execution converge.
+  Since 2022 and sharpening his expertise across several prominent architectural firms, Samuel has operated on a foundational philosophy: "Architecture is not merely a matter of conception, but an act of structural execution." By masterfully bridging conceptual design knowledge with hands-on technical experience, he has built a practice where visionary design, raw craftsmanship, and precise execution converge.
 updated_by: 1
-updated_at: 1791988609
+updated_at: 1792405091
 ---

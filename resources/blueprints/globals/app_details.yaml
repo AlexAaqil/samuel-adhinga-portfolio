@@ -1,0 +1,37 @@
+title: 'App Details'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: artist_name
+            field:
+              type: text
+              display: 'Artist Name'
+          -
+            handle: city
+            field:
+              type: text
+              display: City
+          -
+            handle: address
+            field:
+              type: textarea
+              display: Address
+          -
+            handle: email
+            field:
+              type: text
+              display: Email
+          -
+            handle: phone
+            field:
+              type: textarea
+              display: Phone
+          -
+            handle: whatsapp_phone
+            field:
+              type: text
+              display: 'WhatsApp Phone'

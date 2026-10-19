@@ -22,18 +22,25 @@
     <section class="RecentProjects py-8">
         <div class="container-fluid">
             <div class="projects-wrapper grid lg:grid-cols-2 gap-8">
-                {{ recent_projects }}
-                    <div class="project">
-                        <div class="image h-[40dvh] lg:h-[60dvh]">
-                            <img src="{{ project_image:url }}" alt="{{ project_image:alt ?? 'Project Image' }}" class="w-full h-full object-cover">
+                {{ if {collection:portfolioprojects taxonomy:project_types="{get:type}"} }}
+                    {{ collection:portfolioprojects taxonomy:project_types="{get:type}" }}
+                        <div class="portfolio">
+                            <div class="image h-[40dvh] lg:h-[60dvh]">
+                                <img src={{ image }} alt={{ image:alt ?? title }} class="h-full w-full object-cover" />
+                            </div>
+                            <div class="content space-y-1 py-4 px-2">
+                                <a href="{{ url }}">
+                                    <p class="font-bold">{{ title }}</p>
+                                </a>
+                                <p class="text-caption-text">{{ project_year }}</p>
+                            </div>
                         </div>
-
-                        <div class="content py-4 px-2 space-y-2">
-                            <p class="font-bold">{{ project_name }}</p>
-                            <p class="text-caption-text">{{ project_year }}</p>
-                        </div>
-                    </div>
-                {{ /recent_projects }}
+                    {{ /collection:portfolioprojects }}
+                {{ else }}
+                    <p class="text-caption-text col-span-full py-8 lg:text-center">
+                        No projects found{{ if get:type }} in this category{{ /if }} yet.
+                    </p>
+                {{ /if }}
             </div>
         </div>
     </section>
